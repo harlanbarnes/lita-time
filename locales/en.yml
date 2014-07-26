@@ -1,0 +1,10 @@
+en:
+  lita:
+    handlers:
+      time:
+        help:
+          time_key: "time LOCATION"
+          time_value: "Displays the local time in a given location"
+        response:
+          success: "The current time for the %{type} of %{query} is %{time}"
+          failure: "Sorry, couldn't find %{location}"
