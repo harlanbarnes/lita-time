@@ -2,14 +2,14 @@ require "spec_helper"
 
 describe Lita::Handlers::Time, lita_handler: true do
 
-  it { routes_command("time Mableton, GA").to(:fetch) }
-  it { routes_command("time Mableton, GA?").to(:fetch) }
-  it { routes_command("time in Mableton, GA").to(:fetch) }
-  it { routes_command("time in Mableton, GA?").to(:fetch) }
-  it { routes_command("what time in Mableton, GA").to(:fetch) }
-  it { routes_command("what time in Mableton, GA?").to(:fetch) }
-  it { routes_command("what time is it in Mableton, GA").to(:fetch) }
-  it { routes_command("what time is it in Mableton, GA?").to(:fetch) }
+  it { is_expected.to route_command("time Mableton, GA").to(:fetch) }
+  it { is_expected.to route_command("time Mableton, GA?").to(:fetch) }
+  it { is_expected.to route_command("time in Mableton, GA").to(:fetch) }
+  it { is_expected.to route_command("time in Mableton, GA?").to(:fetch) }
+  it { is_expected.to route_command("what time in Mableton, GA").to(:fetch) }
+  it { is_expected.to route_command("what time in Mableton, GA?").to(:fetch) }
+  it { is_expected.to route_command("what time is it in Mableton, GA").to(:fetch) }
+  it { is_expected.to route_command("what time is it in Mableton, GA?").to(:fetch) }
 
   describe "#fetch" do
     let(:response) { double("Faraday::Response") }
