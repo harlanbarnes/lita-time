@@ -70,7 +70,7 @@ JSON
 
       send_command("time Mableton, GA")
       expect(replies.last).to eq(
-        "Sorry, couldn't find Mableton, GA"
+        "Error parsing API response for Mableton, GA"
       )
     end
   end

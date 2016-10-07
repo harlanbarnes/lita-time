@@ -8,3 +8,4 @@ en:
         response:
           success: "The current time for the %{type} of %{query} is %{time}"
           failure: "Sorry, couldn't find %{location}"
+          json_failure: "Error parsing API response for %{location}"
