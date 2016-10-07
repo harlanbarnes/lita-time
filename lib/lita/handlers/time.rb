@@ -23,9 +23,8 @@ module Lita
           format: 'json'
         )
 
-        data = MultiJson.load(http_response.body)["data"]
-
         begin
+          data = MultiJson.load(http_response.body)["data"]
           type  = data['request'][0]['type']
           query = data['request'][0]['query']
           time  = data['time_zone'][0]['localtime'].split(/ /)[1]
