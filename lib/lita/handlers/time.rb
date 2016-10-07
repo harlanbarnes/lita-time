@@ -23,13 +23,14 @@ module Lita
           format: 'json'
         )
 
-        data = MultiJson.load(http_response.body)["data"]
-
         begin
+          data = MultiJson.load(http_response.body)["data"]
           type  = data['request'][0]['type']
           query = data['request'][0]['query']
           time  = data['time_zone'][0]['localtime'].split(/ /)[1]
           response.reply t("response.success", :type => type, :query => query, :time => time)
+        rescue MultiJson::ParseError
+          response.reply t("response.json_failure", :location => location)
         rescue
           response.reply t("response.failure", :location => location)
         end

@@ -64,5 +64,14 @@ JSON
         "Sorry, couldn't find not a real place"
       )
     end
+
+    it "replies with a helpful message when the API returns non-JSON" do
+      allow(response).to receive(:body).and_return("")
+
+      send_command("time Mableton, GA")
+      expect(replies.last).to eq(
+        "Error parsing API response for Mableton, GA"
+      )
+    end
   end
 end
