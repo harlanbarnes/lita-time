@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-time"
-  spec.version       = "0.1.1"
+  spec.version       = "0.1.2"
   spec.authors       = ["Harlan Barnes"]
   spec.email         = ["hbarnes@pobox.com"]
   spec.description   = %q{A Lita handler for getting the curent time for a given location}
