@@ -10,6 +10,7 @@ describe Lita::Handlers::Time, lita_handler: true do
   it { is_expected.to route_command("what time in Mableton, GA?").to(:fetch) }
   it { is_expected.to route_command("what time is it in Mableton, GA").to(:fetch) }
   it { is_expected.to route_command("what time is it in Mableton, GA?").to(:fetch) }
+  it { is_expected.to_not route_command("I think it's time for lunch") }
 
   describe "#fetch" do
     let(:response) { double("Faraday::Response") }
