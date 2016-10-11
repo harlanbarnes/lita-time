@@ -3,7 +3,7 @@ module Lita
     class Time < Handler
       URL = "http://api.worldweatheronline.com/free/v2/tz.ashx"
 
-      route(/(?:what\s)?time(?:\sis\sit)?(?:\sin)?\s([^\?]+)(?:\?)?/, :fetch, command: true, help: {
+      route(/\A(?:what\s)?time(?:\sis\sit)?(?:\sin)?\s([^\?]+)(?:\?)?/, :fetch, command: true, help: {
         t("help.time_key") => t("help.time_value")
       })
 
